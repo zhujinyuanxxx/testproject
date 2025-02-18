@@ -1,0 +1,39 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.top {
+  background-color: black;
+  flex-grow: 1;
+  overflow: auto;
+
+
+  //display: flex;
+  //align-content: space-between;
+}
+
+.topItems{
+  background-color: yellow;
+  width: 500px;
+  height: 500px;
+
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+.bottom {
+  background-color: blue;
+  flex-shrink: 0;
+}

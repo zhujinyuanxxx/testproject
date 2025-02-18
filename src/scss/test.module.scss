@@ -1,0 +1,91 @@
+.test{
+  color: red;
+}
+
+body{
+
+  margin: 0;
+  padding: 0;
+  //height: 800px;
+  //width: 800px;
+  background-color: darkmagenta;
+}
+body{
+  //border: green;
+
+  //align-content: center;
+  //align-items: center;
+  //justify-content: center;
+  background-color: #282c34;
+}
+
+.dmain{
+
+  //height: 500px;
+  //width: 500px;
+  display: flex;
+
+
+  background-color: darkorange;
+  margin: 50% auto;
+  width: 50%;
+  height: 50%;
+  border: 3px solid green;
+  padding: 20px;
+
+  align-content: center;
+  //align-items: center;
+  justify-content: center;
+}
+
+.d1{
+
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+
+.d2{
+
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+}
+
+.d3{
+
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+}
+
+.button{
+  display: none;
+
+}
+
+
+.testBox{
+  display: flex;
+
+
+}
+
+.testBoxItems{
+  display: flex;
+  flex-flow: column;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  min-width: 0;
+}
+
+.testBoxItem{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  min-width: 0;
+}

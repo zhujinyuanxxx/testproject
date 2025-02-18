@@ -1,0 +1,56 @@
+body{
+  margin: 0;
+  padding:0;
+  width: 100vw;
+}
+
+.urlInTable{
+
+  color: #61dafb;
+
+  //max-width: 20vw;
+  //
+  //white-space: nowrap;
+  //text-overflow: ellipsis;
+  //overflow: hidden;
+
+
+}
+
+.urlInTable:hover{
+  cursor: pointer;
+  color: red;
+
+}
+
+#na{
+
+}
+
+.itemsInTable{
+
+  //max-width: 20vw;
+  //
+  //white-space: nowrap;
+  //
+  //text-overflow: ellipsis;
+  //overflow: hidden;
+
+}
+
+
+.form{
+
+  height: 80vh;
+  //flex: auto;
+  //min-width: 0;
+
+}
+
+.table{
+  height: 75vh;
+  //flex: auto;
+  //min-width: 0;
+
+}
+

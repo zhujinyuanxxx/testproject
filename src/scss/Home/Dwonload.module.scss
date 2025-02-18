@@ -1,0 +1,154 @@
+
+.form{
+
+  background-color: #1B1464;
+}
+
+
+.header{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  //justify-content: center;
+  padding: 10px;
+  //top: 100px;
+  //bottom: 100px;
+}
+
+
+.tableAndFriendListBox{
+
+  display: flex;
+  flex-direction: row;
+  color: #ff6347; /* 设置字体颜色 */
+}
+
+
+.table{
+  flex-grow: 0;
+  margin: 1vw;
+  //width: 80vw;
+  overflow-x: auto;
+  color: #ff6347; /* 设置字体颜色 */
+}
+
+.itemsInTable{
+
+}
+
+.friendList{
+
+  flex-grow: 1;
+
+  margin: 1vw 1vw 1vw 1vw;
+
+  width: 15vw;
+
+  //height: 50vh;
+
+  overflow-x: auto
+
+  //background-color: darkmagenta;
+  //
+  //border-radius: 0 2vw 0 2vw;
+
+  //display: flex;
+  //
+  //// 当内容溢出时显示滚动条
+  //overflow-y: auto;
+  //
+  //// 可选：如果需要隐藏水平滚动条
+  //overflow-x: hidden;
+
+
+}
+
+.friendListVirtualList{
+
+  height: 90%;
+  width: 100%;
+
+}
+
+.modalFriendList{
+
+  //width: 15vw;
+  //
+  //height: 50vh;
+
+  overflow-x: auto
+}
+
+.modalFriendListItem:hover{
+
+  &:active {
+    background-color: red;
+    color: black;
+  }
+
+}
+
+.frontAndBack{
+  position: relative;
+  width: 300px;
+  height: 200px;
+  //transform-style: preserve-3d;
+  //transition: transform 0.6s;
+  z-index: 10000;
+}
+
+.front{
+  width: 300px;
+  height: 200px;
+  background: #fc6464;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  //position: absolute;
+  //z-index: 100;
+}
+
+.back{
+  width: 300px;
+  height: 200px;
+  background: #3b70a6;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  //position: absolute;
+}
+
+.front:hover{
+  transform: rotateY(180deg);
+}
+
+
+.front:hover+.back{
+  transform: rotateY(0deg);
+}
+
+
+
+
+
+@media screen and (max-width:550px) {
+
+  .friendList{
+    display: none;
+
+  }
+
+  .table{
+
+    margin: 1vw;
+
+    //width: 100vw;
+
+
+  }
+
+}
+
+
+

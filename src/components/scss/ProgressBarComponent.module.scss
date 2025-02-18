@@ -1,0 +1,129 @@
+///* From Uiverse.io by thekuntal49 */
+//.Loader {
+//  width: 400px;
+//  height: 32px;
+//  background-color: #ffffff;
+//  position: relative;
+//  overflow: hidden;
+//  border: 3px solid #ffffff;
+//}
+//
+//.Progress {
+//  width: 100%;
+//  height: 100%;
+//  background-color: #000000;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  color: #ffffff;
+//  //animation: progress-animation 3s ease-in-out forwards infinite;
+//  transition: width 0.3s ease-in-out;
+//}
+//
+//.Progress::after {
+//  content: attr(data-percentage);
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  font-weight: bold;
+//  transform: translate(-50%, -50%);
+//  font-size: 1rem;
+//  color: #ffffff;
+//}
+//
+//@keyframes progress-animation {
+//  0% {
+//    width: 0;
+//  }
+//  25% {
+//    width: 25%;
+//  }
+//  50% {
+//    width: 50%;
+//  }
+//  75% {
+//    width: 75%;
+//  }
+//  100% {
+//    width: 100%;
+//  }
+//}
+//
+//@keyframes percentage-animation {
+//  0% {
+//    content: "0%";
+//  }
+//  25% {
+//    content: "25%";
+//  }
+//  50% {
+//    content: "50%";
+//  }
+//  75% {
+//    content: "75%";
+//  }
+//  100% {
+//    content: "100%";
+//  }
+//}
+//
+//.Progress::after {
+//  animation: percentage-animation 3s ease-in-out forwards infinite;
+//}
+/* From Uiverse.io by thekuntal49 */
+.Loader {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 400px;
+  max-width: 80vh;
+  height: 32px;
+  background-color: #ffffff;
+  overflow: hidden;
+  border: 3px solid #000000;
+
+}
+
+.Progress {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  transition: width 0.3s ease-in-out;
+}
+
+.Progress::after {
+  content: attr(data-percentage);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* 添加覆盖层样式 */
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  z-index: 999; /* 确保覆盖层在最上层 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden; /* 默认隐藏 */
+}
+
+.Overlay.visible {
+  visibility: visible; /* 显示覆盖层 */
+}

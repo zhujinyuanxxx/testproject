@@ -1,0 +1,695 @@
+body{
+  margin: 0;
+  padding:0;
+  //width: 100vw;
+  max-width: 100%;
+
+  //background: linear-gradient(to bottom, #f0f0f0, #3b70a6);
+
+  background: url("../../photograph/bodyImg.jpg");
+  background-size: cover;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; background-color: yellow }
+  to { opacity: 1; background-color: yellow}
+}
+
+.tt {
+  animation: fadeIn 5s forwards;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+//.header{
+//  //background-color: red;
+//  //height: 100px;
+//  //width: auto;
+//  //opacity: 0.5;
+//
+//  z-index: 1000;
+//  position: fixed;
+//  background: red;
+//  height: 60px;
+//  width: 100%;
+//  text-align: center;
+//  transition: top 0.3s;
+//  // 根据`visible`状态显示或隐藏导航栏
+//  opacity: 0.2;
+//}
+
+//$navbar-height: 60px;
+//$navbar-background: red;
+//
+//.navbar {
+//  z-index: 1000;
+//  position: fixed;
+//  background: $navbar-background;
+//  height: $navbar-height;
+//  width: 100%;
+//  text-align: center;
+//  transition: top 0.3s;
+//  opacity: 0.1;
+//}
+
+
+//.headerUl{
+//
+//  font-size: 5vh;
+//
+//}
+
+.navigator {
+
+  z-index: 1000;
+
+  position: fixed;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  height: 80px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  flex-Direction: row;
+  transition: top 0.3s;
+
+}
+
+.logo{
+  margin: 2vh;
+  display: flex;
+  flex-Direction: row;
+  justify-content: center;
+  flex-grow: 1;
+
+  //height: 100%;
+
+}
+
+.MenuSelection{
+
+  display: flex;
+  flex-Direction: row;
+  justify-content: center;
+  flex-grow: 1;
+
+}
+
+.MenuLogin{
+
+  display: flex;
+  flex-Direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  gap: 5vw;
+
+}
+
+.MenuLogin img{
+
+  width: 50%;
+  height: 50%;
+
+}
+
+.Login{
+
+  background-color: darkmagenta;
+  //border: 2px solid blue; /* 蓝色边框 */
+  //border-radius: 10px; /* 圆角半径，可以根据需要调整 */
+  //width: 200px;
+  //height: 150px;
+
+  display: flex;
+  flex-Direction: row;
+  justify-content: center; /* 让文字垂直居中 */
+  align-items: center;
+
+  text-align: center;
+
+
+}
+
+.ClauseCanvas{
+
+  background-color: #61dafb;
+  //font: 16px Arial;
+  //color: black;
+
+}
+
+//.Login a{
+//  text-align: center;
+//  //background-color: yellow;
+//  //width: 100%;
+//
+//}
+
+.menuImg{
+  display: none;
+}
+
+.menuForPadImg{
+  display: none;
+}
+
+.mobileNavigator{
+
+  display: none;
+
+}
+
+.navigator div ul a{
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.navigator div ul a:hover{
+  color: #3b70a6;
+  //text-decoration: red;
+}
+
+
+
+.containerOne{
+  //background-color: pink;
+
+  //height: 1000px;
+  //height: 50vh;
+  width: auto;
+  margin: 1vw;
+
+}
+
+
+
+.containerTwo{
+  //background-color: #1B1464;
+  height: 60vh;
+  //height: 800px;
+  width: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5vw;
+
+  margin: 1vw;
+}
+
+/* 定义关键帧动画 */
+@keyframes moveUpAndDownOnContainerTwoItemOne {
+  0% {
+    transform: translateY(25px); /* 距离元素初始位置下方的50像素 */
+    //transform: translateY(0); /* 元素初始位置（即原位置） */
+  }
+  25% {
+    transform: translateY(0px); /* 距离元素初始位置下方的25像素 */
+  }
+  50% {
+    transform: translateY(-25px); /* 回到初始位置 */
+  }
+  75% {
+    transform: translateY(0px); /* 距离元素初始位置下方的50像素 */
+    //transform: translateY(0); /* 元素初始位置（即原位置） */
+  }
+  100% {
+    transform: translateY(25px); /* 距离元素初始位置下方的25像素 */
+  }
+}
+
+/* 将动画应用到元素上，并设置循环 */
+.containerTwoItemOne {
+  position: relative; /* 通常需要定位以便移动 */
+  //animation: moveUpAndDown 2s linear forwards; /* 动画名称、持续时间、速度曲线（线性）和一次循环 */
+  animation: moveUpAndDownOnContainerTwoItemOne 2s linear infinite; /* 无限循环  */
+
+  flex-shrink: 1;
+
+  overflow: hidden;
+
+}
+
+
+
+
+//.containerTwoItemOne img{
+//
+//  width: 100%;
+//  height: 100%;
+//  object-fit: cover;
+//  transition: opacity 0.5s ease;
+//
+//}
+//
+//.containerTwoItemOne:hover img{
+//
+//  opacity: 0;
+//
+//}
+
+
+.containerTwoImg{
+
+  height: 100%;
+  width: 100%;
+  //height: 50vh;
+  //width: 50vh;
+
+}
+
+.containerTwoImg img{
+
+  height: 100%;
+  width: 100%;
+  //height: 50vh;
+  //width: 50vh;
+
+}
+
+//.containerTwoImg2{
+//
+//  height: 100%;
+//  width: 100%;
+//  //height: 50vh;
+//  //width: 50vh;
+//
+//}
+
+
+
+/* 定义关键帧动画 */
+@keyframes moveUpAndDownOnContainerTwoItemTwo {
+  0% {
+    transform: translateY(50px); /* 距离元素初始位置下方的50像素 */
+    opacity: 0.3;
+    //transform: translateY(0); /* 元素初始位置（即原位置） */
+  }
+  50% {
+    transform: translateY(25px); /* 距离元素初始位置下方的25像素 */
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0px); /* 回到初始位置 */
+    opacity: 1;
+  }
+}
+
+.containerTwoItemTwo{
+  //height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  //background-color: yellow;
+  border-radius: 10px;
+  margin: 1px;
+  animation: moveUpAndDownOnContainerTwoItemTwo 2s linear forwards; /* 动画名称、持续时间、速度曲线（线性）和一次循环 */
+
+  flex-shrink: 1;
+
+  //opacity: 0.5;
+
+}
+
+//.containerTwoItemTwo div{
+//
+//}
+//.containerTwoItemTwoTitle{
+//
+//  font-size: 5vh;
+//  font-weight: bold;
+//  //flex: 1; // 或者其他flex值
+//  min-width: 0; // 重要：允许项目缩小到内容的最小尺寸
+//  overflow: hidden; // 隐藏超出容器的内容
+//  white-space: nowrap; // 防止文本换行
+//  text-overflow: ellipsis; // 添加省略号
+//
+//}
+
+.containerTwoItemTwo ul{
+
+  font-size: 2vh;
+  flex: 1; // 或者其他flex值
+  min-width: 0; // 重要：允许项目缩小到内容的最小尺寸
+  overflow: hidden; // 隐藏超出容器的内容
+  white-space: nowrap; // 防止文本换行
+  text-overflow: ellipsis; // 添加省略号
+
+  gap: 1vh;
+
+
+
+  //opacity: 0.8;
+}
+
+.containerTwoItemTwo ul:hover{
+
+  border: #61dafb solid;
+
+  //opacity: 0.8;
+}
+
+.containerTwoItemTwoTitle{
+
+  font-size: 5vh;
+  font-weight: bold;
+
+  gap: 1vh;
+
+  //opacity: 0.8;
+
+}
+
+.containerThree{
+  display: flex;
+  justify-content: center;
+  background-color: orange;
+  height: 80vh;
+  width: auto;
+  margin: 1vw;
+}
+
+.containerThreeItemOne{
+  display: flex;
+  justify-content: center;
+  //background-color: orange;
+  //height: 80vh;
+  width: 100%;
+
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(25%);
+    opacity: 1;
+  }
+}
+
+.containerThreeItemOneA{
+
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+
+
+  height: 60%;
+  width: 28vw;
+  background: red;
+  transition: opacity 3s ease-in-out;
+
+  margin: 1vw;
+
+}
+
+.containerThreeItemOneA:hover .containerThreeItemOneAChildElement{
+
+  animation: floatUp 1s ease forwards;
+
+}
+
+/* 子元素样式 */
+.containerThreeItemOneAChildElement {
+  //z-index: -100;
+  opacity: 0; /* 初始状态不可见 */
+  //transform: translateY(0%); /* 初始状态在下方 */
+  height: 80%;
+  width: 80%;
+  background-color: yellow;
+}
+
+
+.containerThreeItemOneB{
+
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+
+  height: 60%;
+  width: 28vw;
+  background: green;
+  transition: opacity 3s ease-in-out;
+
+  margin: 1vw;
+
+}
+
+.containerThreeItemOneB:hover .containerThreeItemOneBChildElement{
+
+  animation: floatUp 1s ease forwards;
+
+}
+
+/* 子元素样式 */
+.containerThreeItemOneCChildElement {
+  opacity: 0; /* 初始状态不可见 */
+  //transform: translateY(100%); /* 初始状态在下方 */
+  height: 80%;
+  width: 80%;
+  background-color: yellow;
+}
+
+.containerThreeItemOneC{
+
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+
+  height: 60%;
+  width: 28vw;
+  background: blue;
+  transition: opacity 3s ease-in-out;
+
+  margin: 1vw;
+
+}
+
+.containerThreeItemOneC:hover .containerThreeItemOneCChildElement{
+
+  animation: floatUp 1s ease forwards;
+
+}
+
+/* 子元素样式 */
+.containerThreeItemOneBChildElement {
+  opacity: 0; /* 初始状态不可见 */
+  //transform: translateY(100%); /* 初始状态在下方 */
+  height: 80%;
+  width: 80%;
+  background-color: yellow;
+
+}
+
+
+.containerFour{
+  display: flex;
+  justify-content: center;
+  background-color: #61dafb;
+  height: 80vh;
+  width: auto;
+  margin: 1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+  //background-color: yellow;
+  //height: 100px;
+  width: auto;
+  margin: 1vw;
+
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+
+}
+
+.carousel{
+  background-color: green;
+  height: 100%;
+  width: auto;
+  //margin: 1vw;
+  //z-index: 10;
+}
+
+.footerTestDiv{
+  width: 200px;
+  //height: 100%;
+  background-color: darkmagenta;
+  text-align: center;
+}
+
+///* 定义关键帧动画 */
+//@keyframes moveUpAndDown {
+//  0% {
+//    transform: translateY(50px); /* 向上移动50像素 */
+//    //transform: translateY(0); /* 元素初始位置（即原位置） */
+//  }
+//  50% {
+//    transform: translateY(25px); /* 向上移动50像素 */
+//  }
+//  100% {
+//    transform: translateY(0); /* 回到初始位置 */
+//  }
+//}
+//
+///* 将动画应用到元素上，并设置循环 */
+//.containerTwoRightItem {
+//  position: relative; /* 通常需要定位以便移动 */
+//  animation: moveUpAndDown 2s linear forwards; /* 动画名称、持续时间、速度曲线（线性）和一次循环 */
+//  //animation: moveUpAndDown 2s linear infinite; /* 无限循环  */
+//}
+
+@media screen and (max-width:1485px) {
+
+  .navigator {
+
+    justify-content: space-around;
+
+  }
+
+  .MenuSelection{
+    display: none;
+  }
+
+  .menuImg{
+    display: flex;
+    //background-color: yellow;
+  }
+
+}
+
+@media screen and (max-width:550px) {
+
+  .navigator {
+
+
+  }
+
+  .logo{
+
+    justify-content: flex-start;
+
+  }
+
+  .MenuLogin{
+    display: none;
+  }
+
+  .mobileNavigator{
+    //background-color: yellow;
+    margin: 1vw;
+    display: flex;
+    flex-direction: row-reverse;
+
+  }
+
+  .mobileNavigatorDropdown{
+    height: 100%;
+    width: 2vw;
+
+  }
+
+  .mobileNavigatorDropdownA{
+    height: 100%;
+    width: 20vw;
+  }
+
+  .mobileNavigatorDropdownASpace{
+    height: 100%;
+    width: 100%;
+  }
+
+  .mobileNavigatorImg{
+
+    height: 100%;
+    width: 100%;
+    //height: 50vh;
+    //width: 50vh;
+
+  }
+
+  .containerThreeItemOne{
+    flex-direction: column;
+  }
+
+  .containerThree{
+
+    height: auto;
+
+  }
+
+  .containerThreeItemOneA{
+    height: 50vh;
+    //height: 100%;
+    width: 100%;
+
+    transition: opacity 3s ease-in-out;
+
+    margin: 1vw 0 1vw 0;
+  }
+
+  .containerThreeItemOneB{
+    height: 50vh;
+    //height: 100%;
+    width: 100%;
+
+    transition: opacity 3s ease-in-out;
+
+    margin: 1vw 0 1vw 0;
+  }
+
+  .containerThreeItemOneC{
+    height: 50vh;
+    //height: 100%;
+    width: 100%;
+    //background: red;
+    transition: opacity 3s ease-in-out;
+    margin: 1vw 0 1vw 0;
+
+
+  }
+
+  .containerTwoItemTwo{
+    display: none;
+  }
+
+  .pDFViewerDiv{
+    width: 10vw;
+    height: 10vh;
+  }
+
+  //.footerTestDiv{
+  //  width: 200px;
+  //  background-color: darkmagenta;
+  //  text-align: center;
+  //}
+
+}

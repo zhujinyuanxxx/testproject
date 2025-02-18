@@ -1,0 +1,8 @@
+{
+  "welcome": "欢迎，{{username}}！",
+  "profile": {
+    "name": "姓名",
+    "email": "电子邮件"
+  }
+
+}

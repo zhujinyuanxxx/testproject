@@ -1,0 +1,158 @@
+$color:black;
+body{
+  //display: flex;
+  //align-content: center;
+  //align-items: center;
+  //justify-content: center;
+  //
+  //min-height: 100vh;
+  //min-width: 100vw;
+  //
+  //animation: yellow-twinkle 6s infinite alternate;
+
+}
+
+.loginPage{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  min-width: 100vw;
+
+  animation: yellow-twinkle 6s infinite alternate;
+}
+
+@keyframes yellow-twinkle{
+  0% {
+    //background-size: 100%;
+    background-size: cover;
+    background: url("../../photograph/hongkong.jpg") no-repeat fixed center center;
+  }
+  50% {
+    background: url("../../photograph/R.jpg") no-repeat fixed center center;
+    background-size: cover;
+  }
+  100% {
+    background: url("../../photograph/hongkong2.jpg") no-repeat fixed center center;
+    background-size: cover;
+  }
+}
+
+.main{
+
+  //background-color: darkmagenta;
+  display: flex;
+  //align-content: center;
+  align-items: center;
+
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+
+  //width: 35vw;
+  min-width: 250px;
+
+  //height: 55vh;
+  //justify-content: center;
+
+  //border: 3px solid green;
+
+}
+
+.login{
+
+  //background-color: seagreen;
+  //display: flex;
+  flex-flow: column nowrap;
+
+  //align-content: center;
+  //align-items: center;
+  //justify-content: flex-start;
+  justify-content: center;
+
+  width: 80%;
+  //height: 80%;
+
+  //position: absolute;
+  //top: 50%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
+
+}
+
+//.test{
+//
+//  background: blue;
+//
+//}
+
+.verifyCode{
+  //flex-grow: 1;
+  //width: 15vw;
+  height: 4vh;
+  width: 30%;
+  //font-size: 20px;
+
+  //margin: 5px 5px;
+  //padding: 5px 5px;
+}
+
+.verifyCodeInput{
+  height: 5vh;
+  width: 70%;
+  //width: 12vw;
+  //min-width: ;
+  //flex-grow: 0;
+}
+
+.input{
+  //margin: auto;
+  flex-shrink: 1;
+  font-size: 15px;
+
+  //float: left;
+  //width: 18vw;
+  width: 80%;
+  height: 5vh;
+  //margin-right: 5px;
+  //background-color: yellow;
+}
+
+.formElement{
+
+  //background-color: blue;
+}
+
+.verifyCodeAndInput{
+  display: flex;
+  //width: 50%;
+  height: 5vh;
+  //flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 15px;
+  //width: 250px;
+  //height: 30px;
+}
+
+.loginBox{
+
+  display: flex;
+  flex-direction: column;
+  //flex-flow: column nowrap;
+  //flex-flow: nowrap;
+  align-items: center;
+  justify-content: center;
+  //height: 5vh;
+  //width: 50vw;
+
+}
+
+.loginButton{
+
+  width: 50%;
+
+}

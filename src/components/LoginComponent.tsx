@@ -1,10 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import axios from "axios";
 import User from "../entity/User";
 import styles from "./scss/LoginComponent.module.scss";
 import {Button, Checkbox, Form, Input} from "antd";
 import requestWithoutToken from "../utils/requestWithoutToken";
+import debounce from "../utils/debounce";
 
 
 // 定义 Bunny 组件
@@ -74,6 +74,8 @@ const LoginComponent: React.FC = () => {
         }
 
     }
+
+    const debouncedGetVerifyCode = debounce(() => getVerifyCode(), 1000);
 
     var user1:User = new User('',-1,'');
 
@@ -174,7 +176,7 @@ const LoginComponent: React.FC = () => {
 
                     <Form.Item<FieldType>
 
-                        label="validateCode"
+                        label="ValidateCode"
                         name="validateCode"
                         rules={[{required: true, message: 'Please input validateCode!'}]}
                         className={styles.formElement}
@@ -183,7 +185,7 @@ const LoginComponent: React.FC = () => {
                             <Input className={styles.verifyCodeInput} placeholder="Please input verifyCode" style={{  }} value={verifyCodeInput} onChange={e => {
                                 setVerifyCodeInput(e.target.value)
                             }}/>
-                            <img className={styles.verifyCode} src={verifyCodeUrl} style={{}} onClick={(event: React.MouseEvent<HTMLImageElement>)=> getVerifyCode()}/>
+                            <img className={styles.verifyCode} src={verifyCodeUrl} style={{}} onClick={(event: React.MouseEvent<HTMLImageElement>)=> debouncedGetVerifyCode()}/>
                         </div>
 
                     </Form.Item>

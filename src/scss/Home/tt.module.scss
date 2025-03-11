@@ -6,7 +6,7 @@ body{
 
   //background: linear-gradient(to bottom, #f0f0f0, #3b70a6);
 
-  background: url("../../photograph/bodyImg.jpg");
+  background: url("../../photograph/bodyImg.webp");
   background-size: cover;
 
 }
@@ -74,11 +74,12 @@ body{
 
   background-color: rgba(0, 0, 0, 0.5);
 
-  height: 80px;
+  height: 10vh;
   width: 100%;
 
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
+  justify-content: space-around;
 
   flex-Direction: row;
   transition: top 0.3s;
@@ -89,9 +90,10 @@ body{
   margin: 2vh;
   display: flex;
   flex-Direction: row;
-  justify-content: center;
+  //justify-content: center;
   flex-grow: 1;
 
+  justify-content: flex-start;
   //height: 100%;
 
 }
@@ -101,6 +103,7 @@ body{
   display: flex;
   flex-Direction: row;
   justify-content: center;
+  align-items: center;
   flex-grow: 1;
 
 }
@@ -186,13 +189,13 @@ body{
 
 
 .containerOne{
-  //background-color: pink;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 
-  //height: 1000px;
-  //height: 50vh;
-  width: auto;
-  margin: 1vw;
-
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
 }
 
 
@@ -274,10 +277,10 @@ body{
 
 .containerTwoImg img{
 
-  height: 100%;
-  width: 100%;
-  //height: 50vh;
-  //width: 50vh;
+  //height: 100%;
+  //width: 100%;
+  height: 60vh;
+  width: 60vh;
 
 }
 
@@ -314,14 +317,13 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
   //background-color: yellow;
   border-radius: 10px;
   margin: 1px;
   animation: moveUpAndDownOnContainerTwoItemTwo 2s linear forwards; /* 动画名称、持续时间、速度曲线（线性）和一次循环 */
 
   flex-shrink: 1;
-
+  color: white;
   //opacity: 0.5;
 
 }
@@ -378,19 +380,23 @@ body{
 .containerThree{
   display: flex;
   justify-content: center;
+  align-content: center;
   background-color: orange;
-  height: 80vh;
-  width: auto;
+  height: 60vh;
+  width: 100vw;
   margin: 1vw;
 }
 
 .containerThreeItemOne{
   display: flex;
   justify-content: center;
+  align-items: center;
+  //border-radius: 2rem;
+  //border: 2px solid black;
   //background-color: orange;
   //height: 80vh;
   width: 100%;
-
+  height: 60vh;
 }
 
 @keyframes floatUp {
@@ -408,15 +414,20 @@ body{
 
   display: flex; /* 使用Flexbox布局 */
   justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
+  //align-items: center; /* 垂直居中 */
 
 
-  height: 60%;
+  height: 100%;
   width: 28vw;
-  background: red;
+  //background: red;
   transition: opacity 3s ease-in-out;
 
   margin: 1vw;
+
+  background-image: url('../../photograph/homepc.png'); /* 替换为你的图片路径 */
+  background-size: contain; /* 或者尝试 cover */
+  background-position: center; /* 图片居中 */
+  background-repeat: no-repeat; /* 防止图片重复 */
 
 }
 
@@ -433,7 +444,13 @@ body{
   //transform: translateY(0%); /* 初始状态在下方 */
   height: 80%;
   width: 80%;
-  background-color: yellow;
+  //background-color: yellow;
+
+  background-image: url('../../photograph/homeM.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 
@@ -441,14 +458,20 @@ body{
 
   display: flex; /* 使用Flexbox布局 */
   justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
+  //align-items: center; /* 垂直居中 */
 
-  height: 60%;
+  height: 100%;
   width: 28vw;
-  background: green;
+  //background: green;
   transition: opacity 3s ease-in-out;
 
   margin: 1vw;
+
+
+  background-image: url('../../photograph/downloadPC.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
 }
 
@@ -464,21 +487,32 @@ body{
   //transform: translateY(100%); /* 初始状态在下方 */
   height: 80%;
   width: 80%;
-  background-color: yellow;
+  //background-color: yellow;
+
+  background-image: url('../../photograph/menuM.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 .containerThreeItemOneC{
 
   display: flex; /* 使用Flexbox布局 */
   justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
+  //align-items: center; /* 垂直居中 */
 
-  height: 60%;
+  height: 100%;
   width: 28vw;
-  background: blue;
+  //background: blue;
   transition: opacity 3s ease-in-out;
 
   margin: 1vw;
+
+  background-image: url('../../photograph/menuPC.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
 }
 
@@ -494,7 +528,12 @@ body{
   //transform: translateY(100%); /* 初始状态在下方 */
   height: 80%;
   width: 80%;
-  background-color: yellow;
+  //background-color: yellow;
+
+  background-image: url('../../photograph/downloadM.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
 }
 
@@ -532,12 +571,41 @@ body{
 }
 
 .carousel{
-  background-color: green;
+  //background-color: green;
   height: 100%;
   width: auto;
   //margin: 1vw;
   //z-index: 10;
 }
+
+.carousel div {
+  position: relative;
+  width: 100%;
+  height: 100vw;
+  max-height: 350px;
+}
+
+.carousel div img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carouselText{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b70a6;
+  text-align: center;
+  font-weight: bold; /* 加粗文本 */
+  font-size: 5vh;
+
+}
+
 
 .footerTestDiv{
   width: 200px;
@@ -584,9 +652,18 @@ body{
     //background-color: yellow;
   }
 
+  .containerTwoItemTwo{
+    display: none;
+  }
+
+  .containerTwoImg img{
+    width: 100%;
+    height: 100%;
+  }
+
 }
 
-@media screen and (max-width:550px) {
+@media screen and (max-width:770px) {
 
   .navigator {
 
@@ -642,7 +719,7 @@ body{
 
   .containerThree{
 
-    height: auto;
+    height: 180vh;
 
   }
 
@@ -677,19 +754,31 @@ body{
 
   }
 
-  .containerTwoItemTwo{
-    display: none;
-  }
+  //.containerTwoItemTwo{
+  //  display: none;
+  //}
 
   .pDFViewerDiv{
     width: 10vw;
     height: 10vh;
   }
 
-  //.footerTestDiv{
-  //  width: 200px;
-  //  background-color: darkmagenta;
-  //  text-align: center;
+  //.containerThreeItemOneA{
+  //  height: auto;
   //}
+  //
+  //.containerThreeItemOneB{
+  //  height: auto;
+  //}
+  //
+  //.containerThreeItemOneC{
+  //  height: auto;
+  //}
+
+  .containerThreeItemOne{
+    //width: 100%;
+    //height: 60vh;
+    height: auto;
+  }
 
 }

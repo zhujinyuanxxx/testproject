@@ -45,25 +45,35 @@ const FriendListComponent: React.FC<FriendListProps> = ({ items, height,width,en
 
     };
 
-    useEffect(()=>{
-
+    useEffect(() => {
         if (hoveredIndex !== null && detailRef.current) {
-            const detailRect = detailRef.current?.getBoundingClientRect();
+            const detailRect = detailRef.current.getBoundingClientRect();
             const windowHeight = window.innerHeight;
+            const windowWidth = window.innerWidth;
 
-            if(detailRect.bottom>windowHeight){
-                // detailRef.current.style.bottom = `${detailRect.height}px`;
+            if (detailRect.bottom > windowHeight) {
                 detailRef.current.style.bottom = "0px";
             }
 
-            if(detailRect.top<0){
+            if (detailRect.top < 0) {
                 detailRef.current.style.top = "0px";
             }
 
+            console.log("detailRect.left" + detailRect.left);
 
+            new Promise<void>((resolve) => {
+                if (detailRect.left < 0 || detailRect.right > windowWidth) {
+                    detailRef.current!.style.left = "50%";
+                    detailRef.current!.style.transform = "translateX(-90%)";
+                }
+
+                resolve();
+            }).then(() => {
+                console.log("detailRect.left2" + detailRect.left);
+            });
         }
+    }, [hoveredIndex]);
 
-    },[hoveredIndex])
 
 
     return (

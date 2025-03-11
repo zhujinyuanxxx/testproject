@@ -1,11 +1,18 @@
-import React, {useState} from "react";
+import React, {forwardRef, ReactNode, useEffect, useState} from "react";
 import styles from "./scss/InputComponent.module.scss";
 import {message, Modal} from "antd";
 import SearchedFriendListComponent from "./SearchedFriendListComponent";
 import request from "../utils/newRequest/request";
 import LoadingComponent from "./LoadingComponent";
 
-const InputComponent: React.FC = () => {
+interface InputProps {
+    showInputModal?: boolean;
+    setShowInputModal?: (show: boolean) => void;
+}
+
+
+const InputComponent = forwardRef<HTMLDivElement, InputProps>(({ showInputModal,setShowInputModal }) => {
+
 
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,6 +24,23 @@ const InputComponent: React.FC = () => {
     const handleCancel = () => {
         setIsModalOpen(false);
     };
+
+    useEffect(()=>{
+
+        if(isModalOpen){
+            if (setShowInputModal) {
+                setShowInputModal(true)
+            }
+        }else{
+            if (setShowInputModal) {
+                setShowInputModal(false)
+            }
+        }
+
+        console.log("isModalOpen"+isModalOpen)
+
+    },[isModalOpen])
+
 
 
     async function GetUserBySearchedUsername(){
@@ -43,6 +67,9 @@ const InputComponent: React.FC = () => {
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             GetUserBySearchedUsername().then(r => setIsModalOpen(true));
+            if (setShowInputModal) {
+                setShowInputModal(true);
+            }
         }
     };
 
@@ -63,12 +90,14 @@ const InputComponent: React.FC = () => {
                 placeholder="Search the receivers..."
                 value={searchedUsername}
                 onChange={event => {setSearchedUsername(event.target.value)}}
+                // onClick={e => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()} // 阻止事件冒泡
             />
 
 
 
         </div>
     )
-}
+})
 
 export default InputComponent;

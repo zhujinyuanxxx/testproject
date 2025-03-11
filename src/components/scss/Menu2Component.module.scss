@@ -7,6 +7,7 @@ button {
   margin: 0;
   cursor: pointer;
   font-family: inherit;
+
 }
 /* ============================ */
 /* <style for bg> ======== */
@@ -29,6 +30,7 @@ button {
   align-items: center;
 
   z-index: 1000;
+  //display: none;
 }
 
 /* <style for menu__icon> ======== */

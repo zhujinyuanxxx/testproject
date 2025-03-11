@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+// import LazyLoad from 'react-lazyload';
+
+
 
 interface ImageSwitcherProps {
     originalImageSrc: string;
@@ -21,12 +24,16 @@ const ImageSwitcher: React.FC<ImageSwitcherProps> = ({
         setHovered(false);
     };
 
+    const handleClick = () => {
+        setHovered(!hovered);
+    };
+
     return (
         <div
             className={`image-container ${className}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-
+            onClick={handleClick}
         >
             {hovered ? (
                 <img src={hoverImageSrc} alt="Hover Image" />

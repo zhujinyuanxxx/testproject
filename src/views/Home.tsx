@@ -294,61 +294,14 @@ const Home: React.FC = () => {
 
     // 创建菜单项数组
     const menuItems: MenuItem[] = [
-        { title: 'OVERVIEW', path: '/home/User/Zhu' },
+        { title: 'OVERVIEW', path: '/home/User/Overview' },
         { title: 'SEND', path: '/home/User/Zhu' },
         { title: 'RECEIVE', path: '/home/User/download' },
-        { title: 'PROFILE', path: '/home/Message' },
+        // { title: 'PROFILE', path: '/home/Message' },
+        { title: 'PROFILE', path: '/home/User/Profile' },
     ];
 
 
-    const displayMainPageRightSide = () => {
-        if (mainPageRightSideRef.current) {
-            mainPageRightSideRef.current.style.right === "0px"
-                ? mainPageRightSideRef.current.style.right = "-100%"
-                : mainPageRightSideRef.current.style.right = "0px";
-
-            console.log(mainPageRightSideRef.current.style.right)
-            console.log(mainPageRightSideRef.current.style.right==="0px")
-
-
-            mainPageRightSideRef.current.classList.add('show');
-        }
-    };
-
-
-    const displayMainPageRightSideForMobile = () => {
-        if (mainPageRightSideForMobileRef.current) {
-            // mainPageRightSideForMobileRef.current.style.right === "0px"
-            //     ? mainPageRightSideForMobileRef.current.style.right = "-100%"
-            //     : mainPageRightSideForMobileRef.current.style.right = "0px";
-            //
-            // console.log(mainPageRightSideForMobileRef.current.style.right)
-            // console.log(mainPageRightSideForMobileRef.current.style.right==="0px")
-            //
-            //
-            // mainPageRightSideForMobileRef.current.classList.add('show');
-            mainPageRightSideForMobileRef.current.style.right = "0px";
-        }
-    };
-
-    const hideMainPageRightSideForMobile = () => {
-        if (mainPageRightSideForMobileRef.current) {
-            mainPageRightSideForMobileRef.current.style.right = "-100%";
-        }
-    };
-
-
-    const displayMainPageSideForMobile = () => {
-        if (mainPageSideForMobileRef.current) {
-            mainPageSideForMobileRef.current.style.left = "0px";
-        }
-    };
-
-    const hideMainPageSideForMobile = () => {
-        if (mainPageSideForMobileRef.current) {
-            mainPageSideForMobileRef.current.style.left = "-100%";
-        }
-    };
 
     /* script.js */
 
@@ -373,13 +326,49 @@ const Home: React.FC = () => {
     //     // 添加更多朋友项...
     // ];
 
+    const [showSidebar, setShowSidebar] = useState(false);
+    const sidebarRef = useRef<HTMLDivElement | null>(null);
+
+
+    const hideMainPageRightSideForMobiles = () => {
+        if (sidebarRef.current && !showInputModal) {
+            // sidebarRef.current.style.left = "100vw";
+            setShowSidebar(false); // 隐藏菜单栏
+        }
+    };
+
+    const showMainPageRightSideForMobile = () => {
+        setShowSidebar(true); // 显示菜单栏
+    };
+
+
+    const [showLeftSidebar, setShowLeftSidebar] = useState(false);
+    const leftSidebarRef = useRef<HTMLDivElement | null>(null);
+
+
+    const hideMainPageLeftSideForMobiles = () => {
+        if (sidebarRef.current) {
+            setShowLeftSidebar(false); // 隐藏菜单栏
+        }
+    };
+
+    const showMainPageLeftSideForMobile = () => {
+        setShowLeftSidebar(true); // 显示菜单栏
+    };
+
+
+    const [showInputModal, setShowInputModal] = useState(false);
+    const [childElementStatus, setChildElementStatus] = useState(false);
+
+
+
     return (
         <Layout className={styles.homeMainPage}>
 
-            {/*<Menu2Component onclick={displayMainPageRightSideForMobile}/>*/}
 
-            <Menu2Component onclick={displayMainPageSideForMobile}/>
-            <Button2Component name={"Friends"} onclick={displayMainPageRightSideForMobile}/>
+
+            <Menu2Component className={styles.mobileWebPageSideMenuBtn} onclick={showMainPageLeftSideForMobile}/>
+            <Button2Component className={styles.mobileWebPageFriendsBtn} name={"Friends"} onclick={showMainPageRightSideForMobile}/>
 
             <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                 <p>Some contents...</p>
@@ -389,21 +378,20 @@ const Home: React.FC = () => {
 
 
             {/*Mobile Web*/}
-            <div className={styles.mainPageSideForMobile} ref={mainPageSideForMobileRef}>
-                <div className={styles.mainPageLeftSideCloseBtn} onClick={hideMainPageSideForMobile}>
-                    X
-                </div>
+            <Sidebar position="left" ref={leftSidebarRef} showSidebar={showLeftSidebar} setShowSidebar={setShowLeftSidebar} className={styles.mainPageRightSideForMobile}>
+                {/*<div className={styles.mainPageLeftSideCloseBtn} onClick={hideMainPageLeftSideForMobiles}>*/}
+                {/*    X*/}
+                {/*</div>*/}
                 <div className={styles.mainPageSideProfile}>
                     {/*<div>收件通知</div>*/}
-                    <div onClick={pushButton}>头像</div>
-                    <div>昵称</div>
+                    <div onClick={pushButton}>Avatar</div>
+                    <div>NickName</div>
                 </div>
                 <Sider collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} className={styles.mainPageSideMenu}>
                     <SideMenuComponent items={menuItems} onClick={cc} width={"50vw"}/>
                 </Sider>
-
-            </div>
-
+            </Sidebar>
+            {/*Mobile Web*/}
 
             {/*<MobileNavigatorComponent/>*/}
 
@@ -411,8 +399,8 @@ const Home: React.FC = () => {
             <div className={styles.mainPageSide}>
                 <div className={styles.mainPageSideProfile}>
                     {/*<div>收件通知</div>*/}
-                    <div onClick={pushButton}>头像</div>
-                    <div>昵称</div>
+                    <div onClick={pushButton}>Avatar</div>
+                    <div>NickName</div>
                 </div>
                 <Sider collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} className={styles.mainPageSideMenu}>
                     {/*<button onClick={dd} className={styles.buttonFlag}>111</button>*/}
@@ -429,57 +417,6 @@ const Home: React.FC = () => {
                 </Sider>
 
             </div>
-
-
-            {/*headerMenu*/}
-            {/*<div className={styles.headerMenu}>*/}
-            {/*    <div className={styles.headerMenuLogo}>*/}
-            {/*        logo*/}
-            {/*    </div>*/}
-
-            {/*    <MenuComponent items={menuItems} onClick={cc} width={"60vw"}/>*/}
-
-
-
-            {/*</div>*/}
-
-
-            {/*sideMenu1*/}
-            {/*<Menu*/}
-
-            {/*    style={{ width: 256 }}*/}
-            {/*    defaultSelectedKeys={['1']}*/}
-            {/*    defaultOpenKeys={['sub1']}*/}
-
-            {/*>*/}
-            {/*    <SubMenu key="sub1" title="Navigation One">*/}
-            {/*        <Menu.Item key="1">Option 1</Menu.Item>*/}
-            {/*        <Menu.Item key="2">Option 2</Menu.Item>*/}
-            {/*        <Menu.Item key="3">Option 3</Menu.Item>*/}
-            {/*        <Menu.Item key="4">Option 4</Menu.Item>*/}
-            {/*    </SubMenu>*/}
-            {/*    <SubMenu key="sub2" title="Navigation Two">*/}
-            {/*        <Menu.Item key="5">Option 5</Menu.Item>*/}
-            {/*        <Menu.Item key="6">Option 6</Menu.Item>*/}
-            {/*        <SubMenu key="sub3" title="Submenu">*/}
-            {/*            <Menu.Item key="7">Option 7</Menu.Item>*/}
-            {/*            <Menu.Item key="8">Option 8</Menu.Item>*/}
-            {/*        </SubMenu>*/}
-            {/*    </SubMenu>*/}
-            {/*    <SubMenu key="sub4" title="Navigation Three">*/}
-            {/*        <Menu.Item key="9">Option 9</Menu.Item>*/}
-            {/*        <Menu.Item key="10">Option 10</Menu.Item>*/}
-            {/*        <Menu.Item key="11">Option 11</Menu.Item>*/}
-            {/*        <Menu.Item key="12">Option 12</Menu.Item>*/}
-            {/*    </SubMenu>*/}
-            {/*</Menu>*/}
-
-
-
-
-
-
-
 
 
             <Layout className={styles.homeMainPageFrame}>
@@ -527,99 +464,26 @@ const Home: React.FC = () => {
                 </div>
                 <div className={styles.mainPageRightSideFriendList}>
 
-                    {/*<div className={styles.mainPageRightSideFriendListItem}>*/}
-                    {/*    <span className={styles.mainPageRightSideFriendListItemAvatar}/>*/}
-                    {/*    <span className={styles.mainPageRightSideFriendListItemUsername}>123</span>*/}
-                    {/*</div>*/}
-
-
-                    {/*<div className={styles.mainPageRightSideFriendListItem}>*/}
-                    {/*    <span className={styles.mainPageRightSideFriendListItemAvatar}/>*/}
-                    {/*    <span className={styles.mainPageRightSideFriendListItemUsername}>123</span>*/}
-                    {/*</div>*/}
-
-                    {/*friendsData*/}
                     <FriendListComponent enableClickEffect={false}/>
 
-
-                    {/*<List*/}
-                    {/*    itemLayout="horizontal"*/}
-                    {/*    dataSource={data}*/}
-                    {/*    renderItem={(item, index) => (*/}
-                    {/*        <List.Item className={styles.mainPageRightSideFriendListItem}>*/}
-                    {/*            <List.Item.Meta*/}
-                    {/*                avatar={<Avatar src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`} />}*/}
-                    {/*                title={<a href="https://ant.design">{item.title}</a>}*/}
-                    {/*                description="123"*/}
-                    {/*                className={styles.mainPageRightSideFriendListItem}*/}
-                    {/*            />*/}
-                    {/*        </List.Item>*/}
-                    {/*    )}*/}
-                    {/*/>*/}
-
-
-
-                    {/*<FriendListComponent items={}/>*/}
-                    {/*<List className={styles.friendList}>*/}
-                    {/*    <VirtualList*/}
-                    {/*        className={styles.friendListVirtualList}*/}
-                    {/*        data={friendsData}*/}
-                    {/*        // height={ContainerHeight}*/}
-                    {/*        itemHeight={80}*/}
-                    {/*        itemKey="email"*/}
-                    {/*        // onScroll={onScroll}*/}
-                    {/*    >*/}
-                    {/*        {(item: UserItem) => (*/}
-                    {/*            <List.Item*/}
-                    {/*                key={item.email}*/}
-                    {/*                // onClick={(e) => {*/}
-                    {/*                //     testConsole1(item);*/}
-                    {/*                //*/}
-                    {/*                // }}*/}
-                    {/*                // style={{ backgroundColor: selected.includes(item.id) ? 'red' : 'transparent' }}*/}
-
-                    {/*            >*/}
-                    {/*                <List.Item.Meta*/}
-                    {/*                    // avatar={<Avatar src={item.picture.large} />}*/}
-                    {/*                    avatar={<Avatar src={"https://api.dicebear.com/7.x/miniavs/svg?seed=1"} />}*/}
-                    {/*                    title={<div>{item.username}</div>}*/}
-                    {/*                    description={item.email}*/}
-
-                    {/*                />*/}
-                    {/*                /!*<div>Content</div>*!/*/}
-                    {/*            </List.Item>*/}
-                    {/*        )}*/}
-                    {/*    </VirtualList>*/}
-
-                    {/*</List>*/}
                 </div>
 
             </div>
 
 
-
-
-
             {/*Mobile Web*/}
-            <div
-                className={styles.mainPageRightSideForMobile}
-                ref={mainPageRightSideForMobileRef}
-                onMouseDown={mainPageRightSideForMobileHandleMouseDown}
-                style={{ width:`${mainPageRightSideForMobileWidth}px`, }}
-            >
-                <div className={styles.mainPageRightSideCloseBtn} onClick={hideMainPageRightSideForMobile}>
-                   X
-                </div>
+            <Sidebar position="right" ref={sidebarRef} showSidebar={showSidebar} setShowSidebar={setShowSidebar} className={styles.mainPageRightSideForMobile} childElementStatus={showInputModal} setChildElementStatus={setShowInputModal}>
+                {/*<div className={styles.mainPageRightSideCloseBtn} onClick={hideMainPageRightSideForMobiles}>*/}
+                {/*    X*/}
+                {/*</div>*/}
                 <div className={styles.mainPageRightSideSearchBox}>
-                    <InputComponent/>
+                    <InputComponent showInputModal={showInputModal} setShowInputModal={setShowInputModal}/>
                 </div>
                 <div className={styles.mainPageRightSideFriendList}>
                     <FriendListComponent enableClickEffect={false}/>
                 </div>
-            </div>
+            </Sidebar>
             {/*Mobile Web*/}
-
-            <Sidebar/>
 
         </Layout>
 

@@ -14,7 +14,7 @@ interface SideMenuBarProps {
 
 const SideMenuComponent: React.FC<SideMenuBarProps> = ({ items, onClick, width }) => {
     return (
-        <nav className={styles.MenuComponent} style={{ width: width ? width : '20vw', height: '80vh', left: 0, top: 0, overflowY: 'auto' }}>
+        <nav className={styles.MenuComponent} style={{ width: width ? width : '20vw', height: '80vh', left: 0, top: 0, overflowY: 'auto',overflowX:'hidden' }}>
             {items.map((item, index) => (
                 <div key={index} onClick={() => onClick(item)} className={styles.MenuItem}>
                     <div className={styles.MenuItemContent}>

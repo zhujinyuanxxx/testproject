@@ -18,6 +18,7 @@
     "@types/three": "^0.160.0",
     "antd": "^5.8.4",
     "axios": "1.5.0",
+    "echarts-for-react": "^3.0.3",
     "http-proxy-middleware": "^2.0.6",
     "i18next": "^23.11.5",
     "konva": "^9.3.11",
@@ -69,5 +70,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/echarts": "^5.0.0"
   }
 }

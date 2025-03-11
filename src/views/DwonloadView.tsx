@@ -6,6 +6,7 @@ import {Button, Form, Input, InputNumber, message, Table, TableColumnsType, Uplo
 import {UploadOutlined} from '@ant-design/icons';
 import {RcFile} from "antd/lib/upload";
 import request from "../utils/newRequest/request";
+import ButtonComponent from "../components/ButtonComponent";
 
 
 const DownloadView: React.FC = () => {
@@ -79,7 +80,7 @@ const DownloadView: React.FC = () => {
         {
             title: 'id',
             dataIndex: 'id',
-            width: 100,
+            width: 50,
             // editable: true,
             key: 'id',
             fixed: 'left',
@@ -93,7 +94,7 @@ const DownloadView: React.FC = () => {
         {
             title: 'fileName',
             dataIndex: 'fileName',
-            width: 150,
+            width: 100,
             // editable: true,
             key: 'fileName',
             fixed: 'left',
@@ -429,15 +430,18 @@ const DownloadView: React.FC = () => {
                 <Form form={form} component={false} className={styles.form}>
 
 
-                    <button onClick={download}>download</button>
+                    {/*<button onClick={download}>download</button>*/}
 
-                    <button onClick={downloadBatch}>downloadBatch</button>
+                    {/*<button onClick={downloadBatch}>downloadBatch</button>*/}
 
-                    {/*<button onClick={test2}>test2</button>*/}
+                    <div className={styles.header}>
+                        <ButtonComponent  name={"DOWNLOAD"} onclick={downloadBatch}/>
+                    </div>
 
-                    <button onClick={getProfile}>getProfile</button>
 
-                    <Button onClick={GetSession}>GetSession</Button>
+                    {/*<button onClick={getProfile}>getProfile</button>*/}
+
+                    {/*<Button onClick={GetSession}>GetSession</Button>*/}
 
                     <Table className={styles.table}
 

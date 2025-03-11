@@ -5,6 +5,8 @@ const Home = lazy(()=>import('../views/Home'))
 const Test = lazy(()=>import('../views/Test'))
 const Test2 = lazy(()=>import('../views/Test2'))
 const TableTest = lazy(()=>import('../views/TableTest'))
+const Overview = lazy(()=>import('../views/Overview'))
+const Profile = lazy(()=>import('../views/Profile'))
 const Zhu = lazy(()=>import('../views/Zhu'))
 const Bill = lazy(()=>import('../views/Bill'))
 const Login = lazy(()=>import('../views/login/Login'))
@@ -83,6 +85,20 @@ const Routes = [
                 element:
                     <React.Suspense fallback={<div>Loading</div>}>
                         <TableTest/>
+                    </React.Suspense>
+            },
+            {
+                path:"/home/User/Overview",
+                element:
+                    <React.Suspense fallback={<div>Loading</div>}>
+                        <Overview/>
+                    </React.Suspense>
+            },
+            {
+                path:"/home/User/Profile",
+                element:
+                    <React.Suspense fallback={<div>Loading</div>}>
+                        <Profile/>
                     </React.Suspense>
             },
             {

@@ -441,6 +441,8 @@ const Zhu: React.FC = () => {
         console.log(progress1);
         console.log(progress2);
         console.log(progress3);
+        console.log("file"+file);
+        console.log("receivers"+receivers);
 
         setTimeout(() => setProgress(progress1), 1000);
         setTimeout(() => setProgress(progress2), 2000);
@@ -451,7 +453,7 @@ const Zhu: React.FC = () => {
         formData.append('fileList', file as any); // 将RcFile类型转换为any，因为FormData.append需要Blob或File类型
 
         receivers.forEach(receiver => {
-            formData.append('receivers', receiver);
+            formData.append('receiverList', receiver);
         });
 
         try {
@@ -466,7 +468,7 @@ const Zhu: React.FC = () => {
                 console.log("9992:"+value.data, { depth: null });
                 initData();
 
-                setTimeout(() => setProgress(100), 4000);
+                setTimeout(() => setProgress(100), 3500);
                 setTimeout(() => message.success('file uploaded successfully'), 4500);
 
             }).catch(error => {
@@ -478,7 +480,8 @@ const Zhu: React.FC = () => {
             console.error('Error uploading file:', error);
         }
 
-        setTimeout(() => setProgressVisable(false), 6000);
+        setTimeout(() => setProgressVisable(false), 4000);
+        setTimeout(() => setProgress(0), 4100);
     }
 
     function handleFileUpload(event:any) {

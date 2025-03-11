@@ -14,8 +14,13 @@ import loginImg from '../../photograph/login.svg';
 import registerImg from '../../photograph/register.svg';
 
 
-import flyBird from '../../photograph/fly.png';
-import standBird from '../../photograph/stand.png';
+import flyBird from '../../photograph/fly.webp';
+import standBird from '../../photograph/stand.webp';
+import dotnet from '../../photograph/dotnet.webp';
+import reactHooks from '../../photograph/reactHooks.webp';
+import docker from '../../photograph/docker.webp';
+import mysql from '../../photograph/25.jpg';
+
 
 
 import logo from '../../photograph/cloudDisk.svg';
@@ -30,6 +35,7 @@ import PDFViewer from "../../components/PDFViewer";
 import PDFViewerList from "../../components/PDFViewerList";
 import ComponentSwitcher from "../../components/ComponentSwitcher";
 import RegisterComponent from "../../components/RegisterComponent";
+import CardsComponent from "../../components/CardsComponent";
 
 
 
@@ -248,13 +254,13 @@ const App: React.FC = () => {
 
 
     //轮播图css
-    const contentStyle: React.CSSProperties = {
-        height: '50vh',
-        color: '#fff',
-        lineHeight: '160px',
-        textAlign: 'center',
-        background: '#364d79',
-    };
+    // const contentStyle: React.CSSProperties = {
+    //     height: '50vh',
+    //     color: '#fff',
+    //     lineHeight: '160px',
+    //     textAlign: 'center',
+    //     background: '#364d79',
+    // };
 
     const navigateTo = useNavigate();
 
@@ -474,7 +480,13 @@ const App: React.FC = () => {
     return (
 
         <>
-            <Modal title="Login" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title="Login" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}
+                   footer={[
+                       <Button key="back" onClick={handleCancel}>
+                           Return
+                       </Button>,
+                   ]}
+            >
                 <LoginComponent/>
             </Modal>
 
@@ -499,17 +511,17 @@ const App: React.FC = () => {
                     }}
                 >
                     <div style={{color: "red"}}>
-                        浏览器的高度为：{height}
+                        Browser's height: {height}
                     </div>
                     <div style={{color: "red"}}>
-                        浏览器的宽度为：{width}
+                        Browser's width: {width}
                     </div>
 
-                    <Button onClick={GetSession}>GetSession</Button>
+                    {/*<Button onClick={GetSession}>GetSession</Button>*/}
 
-                    <Button onClick={debounceLog}>debounce</Button>
+                    {/*<Button onClick={debounceLog}>debounce</Button>*/}
 
-                    <Button onClick={throttleLog}>throttle</Button>
+                    {/*<Button onClick={throttleLog}>throttle</Button>*/}
 
                 </div>
 
@@ -577,18 +589,24 @@ const App: React.FC = () => {
                         <Carousel autoplay effect="fade" className={styles.carousel}>
 
                             <div>
-                                <h3 style={contentStyle}>好</h3>
+                                <div className={styles.carouselText}>
+                                    What technology do we use?
+                                </div>
+                            </div>
+                            <div>
+                                <img src={dotnet} alt="Hover Image" />
                             </div>
 
                             <div>
-                                <h3 style={contentStyle}>快</h3>
+                                <img src={reactHooks} alt="Hover Image" />
                             </div>
                             <div>
-                                <h3 style={contentStyle}>稳</h3>
+                                <img src={docker} alt="Hover Image" />
                             </div>
-                            {/*<div>*/}
-                            {/*    <h3 style={contentStyle}>4</h3>*/}
-                            {/*</div>*/}
+                            <div>
+                                <img src={mysql} alt="Hover Image" />
+                            </div>
+
                         </Carousel>
 
                 </div>
@@ -611,13 +629,15 @@ const App: React.FC = () => {
                     <div
                         className={styles.containerTwoItemTwo}
                     >
-                        Two
-                        {/*<div className={styles.containerTwoItemTwoTitle}>Cloud storage</div>*/}
-                        <ul className={styles.containerTwoItemTwoTitle}>Cloud Storage</ul>
-                        <ul>1.Automated and Intelligent Management</ul>
-                        <ul>2.Improved Storage Efficiency</ul>
-                        <ul>3.Economies of Scale and Elastic Expansion</ul>
-                        <ul>4.Low-Cost Backup</ul>
+                        {/*Two*/}
+                        {/*/!*<div className={styles.containerTwoItemTwoTitle}>Cloud storage</div>*!/*/}
+                        {/*<ul className={styles.containerTwoItemTwoTitle}>Cloud Storage</ul>*/}
+                        {/*<ul>1.Automated and Intelligent Management</ul>*/}
+                        {/*<ul>2.Improved Storage Efficiency</ul>*/}
+                        {/*<ul>3.Economies of Scale and Elastic Expansion</ul>*/}
+                        {/*<ul>4.Low-Cost Backup</ul>*/}
+                        <CardsComponent/>
+
                     </div>
 
                 </div>
@@ -664,7 +684,7 @@ const App: React.FC = () => {
                                 // style={containerThreeItemOneA}
                                 className={styles.containerThreeItemOneBChildElement}
                             >
-                                Fade In Element A
+                                Fade In Element B
                             </div>
 
                         </div>
@@ -684,7 +704,7 @@ const App: React.FC = () => {
                                 // style={containerThreeItemOneA}
                                 className={styles.containerThreeItemOneCChildElement}
                             >
-                                Fade In Element A
+                                Fade In Element C
                             </div>
 
                         </div>

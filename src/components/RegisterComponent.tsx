@@ -139,7 +139,7 @@ const RegisterComponent: React.FC = () => {
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
-                className={styles.login}
+                // className={styles.login}
 
             >
                 {/*1.Username*/}

@@ -11,10 +11,10 @@ interface Menu2ComponentProps {
     onclick?: ()=>void;
     width?: string;
     height?: string;
-
+    className?: string;
 }
 
-const Menu2Component: React.FC<Menu2ComponentProps> = ({onclick,width,height}) => {
+const Menu2Component: React.FC<Menu2ComponentProps> = ({onclick,width,height,className}) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [searchedUsername,setSearchedUsername] = useState('');
@@ -56,7 +56,7 @@ const Menu2Component: React.FC<Menu2ComponentProps> = ({onclick,width,height}) =
 
     return (
 
-        <div className={styles.background} onClick={onclick}>
+        <div className={`${styles.background} ${className}`} onClick={onclick}>
             <button className={styles.menuIcon}>
                 <span></span>
                 <span></span>
